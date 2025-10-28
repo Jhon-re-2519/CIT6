@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Dashboard - Barangay Information Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/official.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-landmark me-2"></i>
+                Official Dashboard
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="userDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle me-1"></i> Maria Dela Cruz
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>My Profile</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-2 col-md-3 sidebar bg-dark">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#dashboard" data-tab="dashboard">
+                            <i class="fas fa-tachometer-alt me-2"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#residents" data-tab="residents">
+                            <i class="fas fa-users me-2"></i> Residents
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#documents" data-tab="documents">
+                            <i class="fas fa-file-contract me-2"></i> Documents
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cases" data-tab="cases">
+                            <i class="fas fa-clipboard-list me-2"></i> Cases
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#appointments" data-tab="appointments">
+                            <i class="fas fa-calendar-check me-2"></i> Appointments
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#analytics" data-tab="analytics">
+                            <i class="fas fa-chart-bar me-2"></i> Analytics
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blockchain" data-tab="blockchain">
+                            <i class="fas fa-link me-2"></i> Blockchain Logs
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Content Area -->
+            <div class="col-lg-10 col-md-9 content-area">
+                <!-- Dashboard Tab -->
+                <div id="dashboard" class="tab-content active">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2>Official Dashboard</h2>
+                        <div class="alert alert-info d-flex align-items-center mb-0">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Welcome, Barangay Captain Maria Dela Cruz
+                        </div>
+                    </div>
+
+                    <!-- Stats Cards -->
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="stat-card">
+                                <div class="stat-icon bg-primary">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h4>1,250</h4>
+                                    <p>Total Residents</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="stat-card">
+                                <div class="stat-icon bg-success">
+                                    <i class="fas fa-file-contract"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h4>42</h4>
+                                    <p>Pending Documents</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="stat-card">
+                                <div class="stat-icon bg-warning">
+                                    <i class="fas fa-clipboard-list"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h4>15</h4>
+                                    <p>Active Cases</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="stat-card">
+                                <div class="stat-icon bg-info">
+                                    <i class="fas fa-calendar-day"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h4>28</h4>
+                                    <p>Today's Appointments</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Recent Activities</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="activity-list">
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-primary">
+                                                <i class="fas fa-user-plus"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <h6>New Resident Registered</h6>
+                                                <p class="text-muted mb-0">Ana Santos added to Zone 3</p>
+                                            </div>
+                                            <div class="activity-time">
+                                                10 minutes ago
+                                            </div>
+                                        </div>
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-success">
+                                                <i class="fas fa-file-signature"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <h6>Document Approved</h6>
+                                                <p class="text-muted mb-0">Barangay Clearance for Juan Dela Cruz</p>
+                                            </div>
+                                            <div class="activity-time">
+                                                1 hour ago
+                                            </div>
+                                        </div>
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-warning">
+                                                <i class="fas fa-exclamation-triangle"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <h6>New Case Reported</h6>
+                                                <p class="text-muted mb-0">Boundary dispute in Zone 2</p>
+                                            </div>
+                                            <div class="activity-time">
+                                                2 hours ago
+                                            </div>
+                                        </div>
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-info">
+                                                <i class="fas fa-link"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <h6>Blockchain Transaction</h6>
+                                                <p class="text-muted mb-0">Resident record updated - Hash: 0x1a2b3c...</p>
+                                            </div>
+                                            <div class="activity-time">
+                                                3 hours ago
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Quick Actions</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-grid gap-2">
+                                        <a href="#residents" class="btn btn-primary btn-tab" data-tab="residents">
+                                            <i class="fas fa-user-plus me-2"></i> Add Resident
+                                        </a>
+                                        <a href="#documents" class="btn btn-outline-primary btn-tab" data-tab="documents">
+                                            <i class="fas fa-file-import me-2"></i> Process Documents
+                                        </a>
+                                        <a href="#cases" class="btn btn-outline-primary btn-tab" data-tab="cases">
+                                            <i class="fas fa-plus-circle me-2"></i> Report Case
+                                        </a>
+                                        <a href="#analytics" class="btn btn-outline-primary btn-tab" data-tab="analytics">
+                                            <i class="fas fa-chart-pie me-2"></i> View Analytics
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Residents Tab -->
+                <div id="residents" class="tab-content">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2>Resident Management</h2>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addResidentModal">
+                            <i class="fas fa-plus me-1"></i> Add Resident
+                        </button>
+                    </div>
+
+                    <!-- Filters -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-md-3">
+                                    <label class="form-label">Zone</label>
+                                    <select class="form-select" id="zoneFilter">
+                                        <option value="">All Zones</option>
+                                        <option value="Zone 1">Zone 1</option>
+                                        <option value="Zone 2">Zone 2</option>
+                                        <option value="Zone 3">Zone 3</option>
+                                        <option value="Zone 4">Zone 4</option>
+                                        <option value="Zone 5">Zone 5</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Category</label>
+                                    <select class="form-select" id="categoryFilter">
+                                        <option value="">All Categories</option>
+                                        <option value="Regular">Regular</option>
+                                        <option value="PWD">PWD</option>
+                                        <option value="Senior Citizen">Senior Citizen</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Gender</label>
+                                    <select class="form-select" id="genderFilter">
+                                        <option value="">All Genders</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Search</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search residents...">
+                                        <button class="btn btn-outline-secondary" type="button">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Residents Table -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Resident Records</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Age</th>
+                                            <th>Gender</th>
+                                            <th>Zone</th>
+                                            <th>Category</th>
+                                            <th>Contact</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Juan Dela Cruz</td>
+                                            <td>35</td>
+                                            <td>Male</td>
+                                            <td>Zone 1</td>
+                                            <td><span class="badge bg-primary">Regular</span></td>
+                                            <td>0912-345-6789</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                                <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Maria Lopez</td>
+                                            <td>68</td>
+                                            <td>Female</td>
+                                            <td>Zone 2</td>
+                                            <td><span class="badge bg-warning">Senior Citizen</span></td>
+                                            <td>0917-890-1234</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                                <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Pedro Ramos</td>
+                                            <td>42</td>
+                                            <td>Male</td>
+                                            <td>Zone 3</td>
+                                            <td><span class="badge bg-info">PWD</span></td>
+                                            <td>0918-456-7890</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                                <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <!-- More rows would be loaded dynamically -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <nav>
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#">Previous</a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documents Tab -->
+                <div id="documents" class="tab-content">
+                    <h2 class="mb-4">Document Requests</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Pending Document Requests</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Request ID</th>
+                                            <th>Resident</th>
+                                            <th>Document Type</th>
+                                            <th>Date Requested</th>
+                                            <th>Purpose</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#BRG-2023-0015</td>
+                                            <td>Juan Dela Cruz</td>
+                                            <td>Barangay Clearance</td>
+                                            <td>October 15, 2023</td>
+                                            <td>Employment Requirement</td>
+                                            <td><span class="badge bg-warning">Pending</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-success">Approve</button>
+                                                <button class="btn btn-sm btn-outline-danger">Reject</button>
+                                                <button class="btn btn-sm btn-outline-primary">View</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#BRG-2023-0016</td>
+                                            <td>Maria Lopez</td>
+                                            <td>Certificate of Indigency</td>
+                                            <td>October 16, 2023</td>
+                                            <td>Scholarship Application</td>
+                                            <td><span class="badge bg-warning">Pending</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-success">Approve</button>
+                                                <button class="btn btn-sm btn-outline-danger">Reject</button>
+                                                <button class="btn btn-sm btn-outline-primary">View</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#BRG-2023-0017</td>
+                                            <td>Pedro Ramos</td>
+                                            <td>Business Clearance</td>
+                                            <td>October 17, 2023</td>
+                                            <td>Small Business Registration</td>
+                                            <td><span class="badge bg-warning">Pending</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-success">Approve</button>
+                                                <button class="btn btn-sm btn-outline-danger">Reject</button>
+                                                <button class="btn btn-sm btn-outline-primary">View</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cases Tab -->
+                <div id="cases" class="tab-content">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2>Case Management</h2>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCaseModal">
+                            <i class="fas fa-plus me-1"></i> Report Case
+                        </button>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Active Cases</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Case ID</th>
+                                            <th>Description</th>
+                                            <th>Date Reported</th>
+                                            <th>Involved Parties</th>
+                                            <th>Assigned Official</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#CASE-2023-0042</td>
+                                            <td>Boundary dispute between neighbors</td>
+                                            <td>October 10, 2023</td>
+                                            <td>Juan Dela Cruz, Pedro Santos</td>
+                                            <td>Maria Dela Cruz</td>
+                                            <td><span class="badge bg-warning">Under Investigation</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">View</button>
+                                                <button class="btn btn-sm btn-outline-success">Update</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#CASE-2023-0041</td>
+                                            <td>Noise complaint - Karaoke until late hours</td>
+                                            <td>October 8, 2023</td>
+                                            <td>Maria Lopez (complainant)</td>
+                                            <td>Ramon Reyes</td>
+                                            <td><span class="badge bg-info">Mediation Scheduled</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">View</button>
+                                                <button class="btn btn-sm btn-outline-success">Update</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#CASE-2023-0040</td>
+                                            <td>Stray dogs causing disturbance</td>
+                                            <td>October 5, 2023</td>
+                                            <td>Multiple residents in Zone 3</td>
+                                            <td>Ana Lopez</td>
+                                            <td><span class="badge bg-success">Resolved</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">View</button>
+                                                <button class="btn btn-sm btn-outline-success">Update</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appointments Tab -->
+                <div id="appointments" class="tab-content">
+                    <h2 class="mb-4">Appointment Management</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Today's Appointments</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Time</th>
+                                            <th>Resident</th>
+                                            <th>Purpose</th>
+                                            <th>Official</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>9:00 AM</td>
+                                            <td>Juan Dela Cruz</td>
+                                            <td>Document Pickup - Barangay Clearance</td>
+                                            <td>Maria Dela Cruz</td>
+                                            <td><span class="badge bg-success">Confirmed</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">Details</button>
+                                                <button class="btn btn-sm btn-outline-warning">Reschedule</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>10:30 AM</td>
+                                            <td>Maria Lopez</td>
+                                            <td>Meeting - Community Concerns</td>
+                                            <td>Ramon Reyes</td>
+                                            <td><span class="badge bg-success">Confirmed</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">Details</button>
+                                                <button class="btn btn-sm btn-outline-warning">Reschedule</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2:00 PM</td>
+                                            <td>Pedro Ramos</td>
+                                            <td>Case Mediation - Boundary Dispute</td>
+                                            <td>Maria Dela Cruz</td>
+                                            <td><span class="badge bg-warning">Pending</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">Details</button>
+                                                <button class="btn btn-sm btn-outline-warning">Reschedule</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3:30 PM</td>
+                                            <td>Liza Santos</td>
+                                            <td>Business Permit Application</td>
+                                            <td>Ana Lopez</td>
+                                            <td><span class="badge bg-success">Confirmed</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">Details</button>
+                                                <button class="btn btn-sm btn-outline-warning">Reschedule</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Tab -->
+                <div id="analytics" class="tab-content">
+                    <h2 class="mb-4">Data Analytics</h2>
+                    
+                    <!-- Summary Cards -->
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <div class="card bg-primary text-white">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h4>1,250</h4>
+                                            <p>Total Residents</p>
+                                        </div>
+                                        <div class="align-self-center">
+                                            <i class="fas fa-users fa-2x"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-success text-white">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h4>42</h4>
+                                            <p>Pending Documents</p>
+                                        </div>
+                                        <div class="align-self-center">
+                                            <i class="fas fa-file-contract fa-2x"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-warning text-white">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h4>15</h4>
+                                            <p>Active Cases</p>
+                                        </div>
+                                        <div class="align-self-center">
+                                            <i class="fas fa-clipboard-list fa-2x"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-info text-white">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h4>28</h4>
+                                            <p>Today's Appointments</p>
+                                        </div>
+                                        <div class="align-self-center">
+                                            <i class="fas fa-calendar-day fa-2x"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Population by Zone</h5>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="zoneChart" height="250"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Resident Categories</h5>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="categoryChart" height="250"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Document Requests by Type</h5>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="documentChart" height="250"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Case Status Distribution</h5>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="caseChart" height="250"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blockchain Logs Tab -->
+                <div id="blockchain" class="tab-content">
+                    <h2 class="mb-4">Blockchain Audit Logs</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Transaction History</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>Transaction Type</th>
+                                            <th>User</th>
+                                            <th>Details</th>
+                                            <th>Blockchain Hash</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2023-10-17 14:23:45</td>
+                                            <td>Resident Record Update</td>
+                                            <td>Maria Dela Cruz</td>
+                                            <td>Updated contact information for Juan Dela Cruz</td>
+                                            <td><code>0x1a2b3c4d5e6f7890abcd...</code></td>
+                                            <td><span class="badge bg-success">Verified</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2023-10-17 13:15:22</td>
+                                            <td>Document Request</td>
+                                            <td>Juan Dela Cruz</td>
+                                            <td>Barangay Clearance requested</td>
+                                            <td><code>0x5e4d3c2b1a9f8e7d6c5b...</code></td>
+                                            <td><span class="badge bg-success">Verified</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2023-10-17 11:42:18</td>
+                                            <td>Case Report</td>
+                                            <td>Ramon Reyes</td>
+                                            <td>New case reported: Boundary dispute</td>
+                                            <td><code>0x9f8e7d6c5b4a3f2e1d0c...</code></td>
+                                            <td><span class="badge bg-success">Verified</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2023-10-17 10:05:33</td>
+                                            <td>Appointment Scheduling</td>
+                                            <td>Pedro Ramos</td>
+                                            <td>Appointment scheduled for document pickup</td>
+                                            <td><code>0x3f2e1d0c9b8a7f6e5d4c...</code></td>
+                                            <td><span class="badge bg-success">Verified</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2023-10-16 16:45:12</td>
+                                            <td>Resident Registration</td>
+                                            <td>Ana Lopez</td>
+                                            <td>New resident added: Carlos Mendoza</td>
+                                            <td><code>0x7e6d5c4b3a2f1e0d9c8b...</code></td>
+                                            <td><span class="badge bg-success">Verified</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <nav>
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#">Previous</a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Resident Modal -->
+    <div class="modal fade" id="addResidentModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Resident</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addResidentForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="residentName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="residentName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="residentAge" class="form-label">Age</label>
+                                    <input type="number" class="form-control" id="residentAge" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="residentGender" class="form-label">Gender</label>
+                                    <select class="form-select" id="residentGender" required>
+                                        <option value="">Select gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="residentZone" class="form-label">Zone</label>
+                                    <select class="form-select" id="residentZone" required>
+                                        <option value="">Select zone</option>
+                                        <option value="Zone 1">Zone 1</option>
+                                        <option value="Zone 2">Zone 2</option>
+                                        <option value="Zone 3">Zone 3</option>
+                                        <option value="Zone 4">Zone 4</option>
+                                        <option value="Zone 5">Zone 5</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="residentCategory" class="form-label">Category</label>
+                                    <select class="form-select" id="residentCategory" required>
+                                        <option value="">Select category</option>
+                                        <option value="Regular">Regular</option>
+                                        <option value="PWD">PWD</option>
+                                        <option value="Senior Citizen">Senior Citizen</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="residentContact" class="form-label">Contact Number</label>
+                                    <input type="text" class="form-control" id="residentContact">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="residentAddress" class="form-label">Complete Address</label>
+                            <textarea class="form-control" id="residentAddress" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="saveResident">Save Resident</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Case Modal -->
+    <div class="modal fade" id="addCaseModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Report New Case</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addCaseForm">
+                        <div class="mb-3">
+                            <label for="caseDescription" class="form-label">Case Description</label>
+                            <textarea class="form-control" id="caseDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="caseParties" class="form-label">Involved Parties</label>
+                            <input type="text" class="form-control" id="caseParties" placeholder="Names of involved residents" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="caseDate" class="form-label">Date of Incident</label>
+                            <input type="date" class="form-control" id="caseDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="caseOfficial" class="form-label">Assigned Official</label>
+                            <select class="form-select" id="caseOfficial" required>
+                                <option value="">Select official</option>
+                                <option value="Maria Dela Cruz">Maria Dela Cruz</option>
+                                <option value="Ramon Reyes">Ramon Reyes</option>
+                                <option value="Ana Lopez">Ana Lopez</option>
+                                <option value="Leo Santos">Leo Santos</option>
+                                <option value="Ivy Mendoza">Ivy Mendoza</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="saveCase">Save Case</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/official.js"></script>
+</body>
+</html>

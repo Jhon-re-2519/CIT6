@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resident Portal - Barangay Information Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/resident.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-landmark me-2"></i>
+                Resident Portal
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="userDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle me-1"></i> John Dela Cruz
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>My Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-2 col-md-3 sidebar bg-dark">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home" data-tab="home">
+                            <i class="fas fa-home me-2"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#records" data-tab="records">
+                            <i class="fas fa-id-card me-2"></i> My Records
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#documents" data-tab="documents">
+                            <i class="fas fa-file-contract me-2"></i> Request Documents
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#appointments" data-tab="appointments">
+                            <i class="fas fa-calendar-check me-2"></i> Appointments
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#status" data-tab="status">
+                            <i class="fas fa-tasks me-2"></i> Request Status
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Content Area -->
+            <div class="col-lg-10 col-md-9 content-area">
+                <!-- Home Tab -->
+                <div id="home" class="tab-content active">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2>Resident Dashboard</h2>
+                        <div class="alert alert-info d-flex align-items-center mb-0">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Welcome back, John Dela Cruz
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3 mb-4">
+                            <div class="stat-card">
+                                <div class="stat-icon bg-primary">
+                                    <i class="fas fa-file-contract"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h4>3</h4>
+                                    <p>Pending Requests</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <div class="stat-card">
+                                <div class="stat-icon bg-success">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h4>7</h4>
+                                    <p>Completed Requests</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <div class="stat-card">
+                                <div class="stat-icon bg-warning">
+                                    <i class="fas fa-calendar-day"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h4>1</h4>
+                                    <p>Upcoming Appointments</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <div class="stat-card">
+                                <div class="stat-icon bg-info">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h4>12</h4>
+                                    <p>Blockchain Records</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Recent Activities</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="activity-list">
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-primary">
+                                                <i class="fas fa-file-contract"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <h6>Barangay Clearance Requested</h6>
+                                                <p class="text-muted mb-0">Submitted on October 15, 2023</p>
+                                            </div>
+                                            <div class="activity-status">
+                                                <span class="badge bg-warning">Pending</span>
+                                            </div>
+                                        </div>
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-success">
+                                                <i class="fas fa-certificate"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <h6>Certificate of Residency Approved</h6>
+                                                <p class="text-muted mb-0">Completed on October 10, 2023</p>
+                                            </div>
+                                            <div class="activity-status">
+                                                <span class="badge bg-success">Completed</span>
+                                            </div>
+                                        </div>
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-info">
+                                                <i class="fas fa-calendar-check"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <h6>Appointment Scheduled</h6>
+                                                <p class="text-muted mb-0">For October 20, 2023 at 2:00 PM</p>
+                                            </div>
+                                            <div class="activity-status">
+                                                <span class="badge bg-info">Scheduled</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Quick Actions</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-grid gap-2">
+                                        <a href="#documents" class="btn btn-primary btn-tab" data-tab="documents">
+                                            <i class="fas fa-file-contract me-2"></i> Request Document
+                                        </a>
+                                        <a href="#appointments" class="btn btn-outline-primary btn-tab" data-tab="appointments">
+                                            <i class="fas fa-calendar-plus me-2"></i> Schedule Appointment
+                                        </a>
+                                        <a href="#records" class="btn btn-outline-primary btn-tab" data-tab="records">
+                                            <i class="fas fa-id-card me-2"></i> View My Records
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- My Records Tab -->
+                <div id="records" class="tab-content">
+                    <h2 class="mb-4">My Records</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Personal Information</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="info-item">
+                                        <label>Full Name:</label>
+                                        <p>Juan Dela Cruz</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <label>Age:</label>
+                                        <p>35</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <label>Gender:</label>
+                                        <p>Male</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="info-item">
+                                        <label>Zone:</label>
+                                        <p>Zone 1</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <label>Category:</label>
+                                        <p>Regular</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <label>Contact Number:</label>
+                                        <p>0912-345-6789</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Request Documents Tab -->
+                <div id="documents" class="tab-content">
+                    <h2 class="mb-4">Request Documents</h2>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Document Request Form</h5>
+                                </div>
+                                <div class="card-body">
+                                    <form id="documentRequestForm">
+                                        <div class="mb-3">
+                                            <label for="documentType" class="form-label">Document Type</label>
+                                            <select class="form-select" id="documentType" required>
+                                                <option value="">Select document type</option>
+                                                <option value="clearance">Barangay Clearance</option>
+                                                <option value="indigency">Certificate of Indigency</option>
+                                                <option value="residency">Certificate of Residency</option>
+                                                <option value="business">Business Clearance/Permit</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="purpose" class="form-label">Purpose</label>
+                                            <textarea class="form-control" id="purpose" rows="3" placeholder="Please specify the purpose of this document"></textarea>
+                                        </div>
+                                        <div class="d-grid">
+                                            <button type="submit" class="btn btn-primary">Submit Request</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Document Types</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="document-type-info">
+                                        <h6><i class="fas fa-file-certificate text-primary me-2"></i>Barangay Clearance</h6>
+                                        <p class="small text-muted">Certification of good moral character and residency.</p>
+                                        
+                                        <h6><i class="fas fa-file-invoice text-success me-2"></i>Certificate of Indigency</h6>
+                                        <p class="small text-muted">Proof of financial status for social welfare programs.</p>
+                                        
+                                        <h6><i class="fas fa-home text-info me-2"></i>Certificate of Residency</h6>
+                                        <p class="small text-muted">Proof of residence in the barangay.</p>
+                                        
+                                        <h6><i class="fas fa-briefcase text-warning me-2"></i>Business Clearance</h6>
+                                        <p class="small text-muted">Permission to operate a business within barangay jurisdiction.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appointments Tab -->
+                <div id="appointments" class="tab-content">
+                    <h2 class="mb-4">Appointments</h2>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="card-title mb-0">Schedule Appointment</h5>
+                                    <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#scheduleModal">
+                                        <i class="fas fa-plus me-1"></i> New Appointment
+                                    </button>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Time</th>
+                                                    <th>Purpose</th>
+                                                    <th>Status</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>October 20, 2023</td>
+                                                    <td>2:00 PM</td>
+                                                    <td>Document Pickup - Barangay Clearance</td>
+                                                    <td><span class="badge bg-success">Confirmed</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-danger">Cancel</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>October 25, 2023</td>
+                                                    <td>10:00 AM</td>
+                                                    <td>Meeting with Barangay Captain</td>
+                                                    <td><span class="badge bg-warning">Pending</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-danger">Cancel</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Upcoming Appointment</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="appointment-highlight">
+                                        <div class="appointment-date">
+                                            <div class="date-day">20</div>
+                                            <div class="date-month">October</div>
+                                            <div class="date-year">2023</div>
+                                        </div>
+                                        <div class="appointment-details">
+                                            <h6>Document Pickup</h6>
+                                            <p class="mb-1"><i class="fas fa-clock me-1"></i> 2:00 PM</p>
+                                            <p class="mb-0"><i class="fas fa-map-marker-alt me-1"></i> Barangay Hall</p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-3">
+                                        <button class="btn btn-sm btn-outline-primary w-100">
+                                            <i class="fas fa-calendar-check me-1"></i> Add to Calendar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Request Status Tab -->
+                <div id="status" class="tab-content">
+                    <h2 class="mb-4">Request Status</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">My Document Requests</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Request ID</th>
+                                            <th>Document Type</th>
+                                            <th>Date Requested</th>
+                                            <th>Status</th>
+                                            <th>Blockchain Hash</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#BRG-2023-0015</td>
+                                            <td>Barangay Clearance</td>
+                                            <td>October 15, 2023</td>
+                                            <td><span class="badge bg-warning">Pending</span></td>
+                                            <td><code>0x1a2b3c4d5e...</code></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">View Details</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#BRG-2023-0012</td>
+                                            <td>Certificate of Residency</td>
+                                            <td>October 5, 2023</td>
+                                            <td><span class="badge bg-success">Completed</span></td>
+                                            <td><code>0x5e4d3c2b1a...</code></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">Download</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#BRG-2023-0008</td>
+                                            <td>Business Clearance</td>
+                                            <td>September 28, 2023</td>
+                                            <td><span class="badge bg-success">Completed</span></td>
+                                            <td><code>0x9f8e7d6c5b...</code></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary">Download</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schedule Appointment Modal -->
+    <div class="modal fade" id="scheduleModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Schedule New Appointment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="appointmentForm">
+                        <div class="mb-3">
+                            <label for="appointmentDate" class="form-label">Date</label>
+                            <input type="date" class="form-control" id="appointmentDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="appointmentTime" class="form-label">Time</label>
+                            <select class="form-select" id="appointmentTime" required>
+                                <option value="">Select time</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="appointmentPurpose" class="form-label">Purpose</label>
+                            <select class="form-select" id="appointmentPurpose" required>
+                                <option value="">Select purpose</option>
+                                <option value="document_pickup">Document Pickup</option>
+                                <option value="meeting">Meeting with Official</option>
+                                <option value="complaint">File Complaint</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="appointmentDetails" class="form-label">Additional Details</label>
+                            <textarea class="form-control" id="appointmentDetails" rows="3" placeholder="Any additional information..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="saveAppointment">Schedule Appointment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/resident.js"></script>
+</body>
+</html>

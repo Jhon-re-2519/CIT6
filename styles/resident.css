@@ -1,0 +1,238 @@
+/* Sidebar */
+.sidebar {
+    min-height: calc(100vh - 56px);
+    padding-top: 20px;
+}
+
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-link.active {
+    color: white;
+    background: var(--secondary);
+    font-weight: 600;
+}
+
+.sidebar .nav-link i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Content Area */
+.content-area {
+    padding: 30px;
+    background: #f8f9fa;
+    min-height: calc(100vh - 56px);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Stat Cards */
+.stat-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.stat-info h4 {
+    margin: 0;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.stat-info p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Activity List */
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary);
+}
+
+.activity-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-right: 15px;
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-content h6 {
+    margin: 0 0 5px 0;
+    color: var(--primary);
+}
+
+.activity-status {
+    margin-left: 15px;
+}
+
+/* Info Items */
+.info-item {
+    margin-bottom: 20px;
+}
+
+.info-item label {
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 5px;
+    display: block;
+}
+
+.info-item p {
+    margin: 0;
+    padding: 8px 12px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    border-left: 3px solid var(--secondary);
+}
+
+/* Document Type Info */
+.document-type-info h6 {
+    color: var(--primary);
+    margin: 15px 0 5px 0;
+    font-size: 0.95rem;
+}
+
+.document-type-info p {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+/* Appointment Highlight */
+.appointment-highlight {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.appointment-date {
+    text-align: center;
+    margin-right: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 70px;
+}
+
+.date-day {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.date-month {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.date-year {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.appointment-details h6 {
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.appointment-details p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Tab Navigation */
+.btn-tab {
+    text-align: left;
+    padding: 12px 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        min-height: auto;
+        padding: 10px 0;
+    }
+    
+    .content-area {
+        padding: 15px;
+    }
+    
+    .stat-card {
+        margin-bottom: 15px;
+    }
+    
+    .activity-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .activity-status {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    
+    .appointment-highlight {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .appointment-date {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
